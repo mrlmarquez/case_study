@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "contract-lease-review"
+version = "0.1.0"
+description = ""
+authors = ["melissa <melissarhonamarquez@gmail.com>"]
+packages = [{ include = "case_study" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pydantic = "^2.11.3"
+openai = "^1.75.0"
+tqdm = "^4.66.4"
+tiktoken = "^0.7.0"
+nltk = "^3.8.1"
+numpy = "^2.0.0"
+pydantic-settings = "^2.3.3"
+groq = "^0.22.0"
+nomic = { extras = ["local"], version = "^3.4.1" }
+smolagents = "^1.14.0"
+litellm = "^1.67.0"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.4"
+poethepoet = "^0.33.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+load-docs = "case_study.rag.loader:main"
+rag = "case_study.rag.rag:main"
+
+[tool.poe.tasks.get_nltk_data]
+help = "Download corpora data for nltk"
+imports = ["nltk"]
+assert = true
+expr = """(
+    nltk.download('punkt_tab')
+)"""
