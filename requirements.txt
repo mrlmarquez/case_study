@@ -1,0 +1,4 @@
+pydantic==2.11.3
+openai==1.75.0
+groq==0.22.0
+nomic==3.4.1

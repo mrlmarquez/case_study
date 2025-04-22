@@ -1,5 +1,19 @@
-from typing import List
+from typing import List, Annotated
 from pydantic import BaseModel, Field
+from langchain_core.documents import Document
+from uuid import uuid4
+
+import operator
+from typing_extensions import TypedDict
+
+
+class ContractLeaseContent(Document):
+    def __init__(content, document_title):
+        super().__init__(
+            page_content=content,
+            metadata={"document_title": document_title},
+            id=uuid4(),
+        )
 
 
 class LegalEntities(BaseModel):
@@ -31,3 +45,18 @@ class LegalEntities(BaseModel):
     expiration_date_of_lease: List[str] = Field(
         default=[""], description="The expiration date of the lease."
     )
+
+
+class GraphState(TypedDict):
+    """
+    Graph state is a dictionary that contains information we want to propagate to, and modify in, each graph node.
+    """
+
+    active_clause: str
+    incoming_clause: str
+    issue: str  # User question
+    conclusion: str
+    is_conclusion_found: bool
+    loop_step: Annotated[int, operator.add]
+    retrieved_rules: List[str]
+    retrieved_applied_clauses: List[str]

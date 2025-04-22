@@ -1,4 +1,4 @@
-from smolagents import CodeAgent, LiteLLMModel
+from smolagents import ToolCallingAgent, LiteLLMModel
 import yaml
 from case_study.agents.final_answer_structurer import FinalAnswerStructurer
 from case_study.rag.config import settings
@@ -16,4 +16,4 @@ retriever_tool = RetrieverTool(vector_db=vector_store)
 with open("case_study/prompts/prompts.yaml", "r") as stream:
     prompt_templates = yaml.safe_load(stream)
 
-agent = CodeAgent(tools=[retriever_tool], model=model, max_steps=6)
+agent = ToolCallingAgent(tools=[retriever_tool], model=model, max_steps=6)
