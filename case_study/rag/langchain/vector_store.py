@@ -15,7 +15,9 @@ class VectorStore:
             ),
             persist_directory=self.filepath,  # Where to save data locally, remove if not necessary
         )
-        self.retriever = self.store.as_retriever(k=3)
+        self.retriever = self.store.as_retriever(
+            search_type="mmr", search_kwargs={"k": 1, "fetch_k": 5}
+        )
 
     def add(self, doc_splits):
         # uuids = [str(uuid4()) for _ in range(len(doc_splits))]

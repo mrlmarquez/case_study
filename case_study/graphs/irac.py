@@ -6,16 +6,21 @@ from case_study.models import GraphState
 
 from langchain_core.messages import HumanMessage, SystemMessage
 
+from case_study.rag.langchain.rules_rag import find_applicable_rules
+from case_study.rag.langchain.vector_store import VectorStore
+
 IDENTIFY_ISSUE_INSTRUCTIONS = "You are a seasoned lawyer specializing in Lease Contracts dealings.\
     You are to analyze what is the issue when comparing the given active clause and the proposed renewal clause.\
     Provide a concise analysis with reasonable basis.\
-    Return JSON with two keys, the key 'issue' is the concise description of the issue. The key 'basis' is the concise explanation of why it is an issue."
+    Return JSON with two keys, the key 'issue' is the concise description of the issue. The key 'basis' is the concise explanation of why it is an issue and indicate the statement(s) where the issue is found."
 
 
 IDENTIFY_ISSUE_PROMPT = (
     "The active clause in the current contract: {ACTIVE_CLAUSE}\n\n \
         The renewal clause in the proposed new contract: {INCOMING_CLAUSE}"
 )
+
+rules_store = VectorStore(doc_type="rules")
 
 
 # NODES
@@ -41,7 +46,10 @@ def identify_issue(state: GraphState):
 
 
 def retrieve_rule(state: GraphState):
-    return "retrieve_rule"
+    issue = state["issue"]
+    retrieved_rules = find_applicable_rules(issue, rules_store)
+    state["retrieved_rules"] = retrieved_rules
+    return state
 
 
 def retrieve_historical_application(state: GraphState):
