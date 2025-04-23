@@ -40,7 +40,7 @@ def identify_issue(state: GraphState):
     )
     content = json.loads(result.content)
     print(content)
-    result = content["issue"]
+    result = content["basis"]
     state["issue"] = result
     return state
 

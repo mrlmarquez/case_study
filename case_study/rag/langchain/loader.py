@@ -1,7 +1,7 @@
 import os
 from tqdm import tqdm
 
-from case_study.rag.langchain.splitter import TextSplitter
+from case_study.rag.langchain.rules_splitter import RulesTextSplitter
 from case_study.rag.langchain.vector_store import VectorStore
 from case_study.utils.files import load_text
 from langchain_core.documents import Document
@@ -20,7 +20,7 @@ def load_rules():
             docs.append(text)
     print(f"Loaded {len(docs)} txt documents")
 
-    text_splitter = TextSplitter(chunk_size=512)
+    text_splitter = RulesTextSplitter(chunk_size=512)
     print("\nSplitting documents into chunks")
     for i, doc in enumerate(docs):
         doc_chunks = text_splitter.split(doc)
