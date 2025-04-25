@@ -1,3 +1,4 @@
+import json
 from case_study.llms.ollama import get_chat
 from case_study.rag.langchain.vector_store import VectorStore
 from langchain_core.messages import HumanMessage
@@ -15,20 +16,20 @@ Now, review the following candidate rules and choose the most relevant rule(s):
 
 {RULES}
 
-Answer:"""
+The response should be in JSON format with key 'relevant_rules' and the value should be list of the matching rules found."""
 
 
 def find_applicable_rules(question, vector_store: VectorStore):
     retrieved_rules = vector_store.retriever.invoke(question)
 
-    llm, _ = get_chat()
+    _, llm = get_chat()
     # Prepare the context and prompt, and generate an answer with the LLM
     retrieved_rules_formatted = _format_docs(retrieved_rules)
     rag_prompt_formatted = RAG_PROMPT.format(
         RULES=retrieved_rules_formatted, ISSUE=question
     )
     answer = llm.invoke([HumanMessage(content=rag_prompt_formatted)])
-    return answer.content
+    return json.loads(answer.content)
 
 
 def _format_docs(docs):

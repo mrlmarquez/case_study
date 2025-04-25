@@ -1,0 +1,58 @@
+[
+    {
+        "country": "Germany",
+        "contract_file": "lease1.txt"
+    },
+    {
+        "country": "Netherlands",
+        "contract_file": "lease2.txt"
+    },
+    {
+        "country": "Norway",
+        "contract_file": "lease3.txt"
+    },
+    {
+        "country": "Denmark",
+        "contract_file": "lease4.txt"
+    },
+    {
+        "country": "Switzerland",
+        "contract_file": "lease5.txt"
+    },
+    {
+        "country": "Spain",
+        "contract_file": "lease6.txt"
+    },
+    {
+        "country": "Portugal",
+        "contract_file": "lease7.txt"
+    },
+    {
+        "country": "France",
+        "contract_file": "lease8.txt"
+    },
+    {
+        "country": "Italy",
+        "contract_file": "lease9.txt"
+    },
+    {
+        "country": "Czech Republic",
+        "contract_file": "lease10.txt"
+    },
+    {
+        "country": "Denmark",
+        "contract_file": "lease11.txt"
+    },
+    {
+        "country": "Austria",
+        "contract_file": "lease12.txt"
+    },
+    {
+        "country": "Finland",
+        "contract_file": "lease13.txt"
+    },
+    {
+        "country": "Greece",
+        "contract_file": "lease14.txt"
+    }
+]

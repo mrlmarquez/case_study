@@ -6,6 +6,7 @@ from case_study.models import GraphState
 
 from langchain_core.messages import HumanMessage, SystemMessage
 
+from case_study.rag.langchain.contracts_rag import find_application
 from case_study.rag.langchain.rules_rag import find_applicable_rules
 from case_study.rag.langchain.vector_store import VectorStore
 
@@ -21,6 +22,7 @@ IDENTIFY_ISSUE_PROMPT = (
 )
 
 rules_store = VectorStore(doc_type="rules")
+contracts_store = VectorStore(doc_type="contracts")
 
 
 # NODES
@@ -48,12 +50,22 @@ def identify_issue(state: GraphState):
 def retrieve_rule(state: GraphState):
     issue = state["issue"]
     retrieved_rules = find_applicable_rules(issue, rules_store)
-    state["retrieved_rules"] = retrieved_rules
+    state["retrieved_rules"] = retrieved_rules["relevant_rules"]
     return state
 
 
 def retrieve_historical_application(state: GraphState):
-    return "retrieve_historical_application"
+    issue = state["issue"]
+    relevant_rules = state["retrieved_rules"]
+    country = "Germany"
+
+    result = find_application(
+        question=issue,
+        relevant_rules=relevant_rules,
+        country=country,
+        vector_store=contracts_store,
+    )
+    return state
 
 
 def conclude(state: GraphState):

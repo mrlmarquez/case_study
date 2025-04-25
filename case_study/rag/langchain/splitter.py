@@ -3,7 +3,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 class TextSplitter:
     def __init__(self, chunk_size, chunk_overlap=200):
-        self.text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
+        self.text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=chunk_size, chunk_overlap=chunk_overlap
         )
 

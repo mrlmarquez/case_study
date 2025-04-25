@@ -174,3 +174,7 @@ cython_debug/
 .pypirc
 
 .vscode/
+
+data/**/*.bin
+data/**/*.sqlite3
+data/**/*.pickle

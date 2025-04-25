@@ -1,0 +1,144 @@
+Merrill Lynch Capital, a division of
+Merrill Lynch Business Financial Services Inc.
+Schedule to
+Lease Agreement Schedule Number
+
+15878-11500-009
+
+This Schedule (“Schedule”), dated as of, December 21, 2005, between Merrill Lynch Capital, a division or Merrill Lynch Business Financial Services Inc. (“Lessor”) and Spansion LLC (“Lessee”) is executed pursuant to Lease Agreement Number 15878-11500 dated September 30, 2005 between Banc of America Leasing and Capital, LLC and Lessee, incorporated in this Schedule by this reference (the “Lease Agreement”).
+Unless otherwise defined in this Schedule, capitalized terms used in this Schedule have the respective meanings assigned to such terms in the Lease Agreement.
+If any provision of this Schedule conflicts with any provision of the Lease Agreement, the provisions contained in this Schedule shall prevail.
+Lessee hereby authorizes Lessor to insert the serial number and other identification data of the Units, dates, and other omitted factual matters or descriptions in this Schedule.
+1.
+Description of Units.
+The Units subject to this Schedule (“Units”), which have a cost to Lessor (“Lessor’s Cost”) in the aggregate of $ (estimated*) Inclusive of taxes, shipping, installation and other related expenses, if any (“Soft Costs”), are as follows:
+*Lessee hereby irrevocably authorizes Lessor to adjust the Capitalized Lessor’s Cost up or down by no more than five percent (5%) within this Schedule to account for the US Dollar/Japanese YEN exchange rate fluctuation.
+The exchange rate shall be set as early at practical but no event later than December 30, 2006.
+Lessor will provide evidence of the final exchange rate to Lessee.
+Quantity
+
+Description
+
+Serial Number
+
+Lessor’s Cost
+(Including
+Soft Costs)
+
+See attached Schedule A
+Equipment Total: $13,535,872.00
+Payment Total: see below
+
+2.
+Acceptance.
+Lessee acknowledges and represents that the Units (a) have been delivered to, received and inspected by Lessee, (b) to Lessee’s knowledge, are in good operating order, repair, condition and appearance, (c) are of the manufacture, design and capacity selected by Lessee and, to Lessee’s knowledge, are suitable for the purposes for which the Units are leased, and are acceptable and satisfactory to Lessee, (d) to Lessee’s knowledge, do not require any additions or modifications to make them suitable for use, other than ancillary modifications or additions normally made by lessees of similar assets, and are available for use and lease by Lessee and Lessor, and (e) have been irrevocably accepted as “Units” leased by Lessee under this Schedule as of the date written below (the “Acceptance Date”).
+3.
+Term.
+The term of the Lease for the Units is for an “Interim Term” (if any) beginning on the Acceptance Date, and continuing through and including the day preceding the Base Date; and for a “Base Term” of forty-six (46) months, beginning on the 23rd day of the calendar month during or following the Acceptance Date (the “Base Date”).
+4.
+Rental.
+Interim Rent shall be due Lessor for each day in the Interim Term and shall equal the daily equivalent of the initial Base Rent.
+Interim Rent shall be payable on the Base Date.
+Base Rent shall be payable in advance in Forty-Six (46) consecutive monthly installments as follows: one (1) payment of $313,734.86; followed by forty-five (45) payments or $324,510.79 each, the first Base Rent installment being payable on the Base Date and the remaining Base Rent installments being payable on the same day of each succeeding month.
+5.
+Stipulated Loss Value.
+After Lessor’s receipt of notice of the occurrence of any Total Loss of any Unit, Lessor shall calculate the Stipulated Loss Value for such Unit and give Lessee notice thereof.
+Such “Stipulated Loss Value”, as of any particular date, shall be the product obtained by multiplying the Lessor’s Cost for the Unit in question by the percentage, as set forth in the “Schedule of Stipulated Loss Values” attached as Annex II, specified opposite the rent installment number (or date) becoming due immediately after the date Lessee gives or is required to give Lessor notice requiring payment of the Stipulated Loss Value If only a portion of the Units is affected by any event causing calculation of Stipulated Loss Value, and the cost of such portion cannot be readily determined from the Lessor’s Cost set forth above, then the Lessor’s.
+Cost for such portion shall be as reasonably calculated by Lessor, which shall be binding upon Lessee absent manifest error.
+ADS Lease Agreement Schedule (standard FMV) 3-02 Page 1 of 3
+6.
+Tax Matters.
+Lessee represents and warrants to Lessor as of the date hereof that to the best of its knowledge (a) the Units qualify under asset guideline class 36.1 and constitute “5-year property” within the meaning of Section 168 of the Code; und (b) the Lessor is the owner of the Units and is entitled to annual accelerated cost recovery deductions for each Unit as provided by Section 168(a) of the Code.
+Lessee hereby covenants that (a) Lessee, and all direct or indirect assignees and sublessees of Lessee, shall treat this Lease as a “true lease” for income tax purposes and will not claim any depreciation or other tax attributes associated with ownership of the Units; and (b) in any taxable year of Lessor, no deductions or losses arising from this Lease will arise from sources without the United States under Section 863 of the Code.
+7.
+Location of Units.
+Units will be located at:
+Location
+
+Address
+City
+
+County
+
+State
+
+ZIP
+See attached Schedule A
+
+8.
+Further Representations and Warranties.
+Lessee represents and warrants to Lessor as of the date hereof as follows:
+
+(a) All representations and warranties of Lessee contained in the Lease Agreement fire true and connect as of the date hereof and as of the Acceptance Date.
+(b) There has been no material adverse change in the operations, business, properties or condition (financial or otherwise) (“Material Adverse Change”) of Lessee or any Guarantor since June 30, 2005.
+There is not pending against Lessee any litigation, proceeding, dispute or claim that is reasonably likely to result In a Material Adverse Change as to Lessee or that may adversely Impair Lessee’s legal or other ability to enter into and perform its obligations under this Lease.
+(c) The operation and maintenance of any Unit in the ordinary course by Lessee do not require the entry into any software or other intellectual property rights agreement with any licensor or other person, except for standard, generally commercially available, “off-the-shelf” third-party software or as disclosed to Lessor in writing prior to the Acceptance Date.
+9.
+Miscellaneous.
+(a) Extension; Purchase.
+In lieu of Lessee’s obligation to return the Units to Lessor upon expiration of the Base Term, Lessee may, if no Event of Default exists, and upon Lessee having provided to Lessor notice not less than 120 days prior to such expiration, irrevocably elect to:
+(i)extend the Base Term as to all and not less than all of the Units under this Schedule for a period to be agreed upon by Lessee and Lessor for an amount equal to the Units then fair market rental value as agreed upon by Lessee and Lessor or, failing such agreement, by an independent, qualified appraiser selected by Lessor and Lessee, with the cost of such appraisal to be borne equally by Lessor and Lessee.
+The fair market rental value shall be payable monthly by Lessor to Lessee on the first day of each month during the extension term, or
+(ii)purchase of Lessor’s right, title and interest in and to all, but not less than all, of the Units under this Schedule on an “as-is, where-is,” quitclaim basis, for a purchase price equal to the then Fair Market Value of the Units.
+“Fair Market Value” shall mean an amount equal to the value of the Units that would be received in an arms-length transaction between an informed and willing buyer/user and an informed and willing seller under no compulsion to sell, as determined by mutual agreement of Lessor and Lessee or, failing such agreement, by an independent, qualified appraiser selected by Lessor and Lessee, with the cost of such appraisal to be borne equally by Lessor and Lessee.
+Lessee shall pay Lessor the purchase price plus any applicable taxes on the expiration of the Base Term in immediately available funds.
+If Lessee fails to provide notice of its election to return the Units to Lessor upon expiration of the Base Term or to renew or purchase pursuant to clause (i) or (ii) above, respectively, at least 120 days before expiration of the Base Term, this Schedule and the Base Term shall, at the option of Lessor, renew for a period of three (3) months at the same
+ADS Lease Agreement Schedule (standard FMV) 3-02 Page 2 of 3
+rental as was most recently payable during the Base Term or terminate upon expiration of the Base Term.
+Each party shall bear its own costs and expenses (including Attorney Costs) incurred in connection with any extension or purchase hereunder.
+Merrill Lynch Capital, a division of
+Merrill Lynch Business Financial Services Inc. Spansion LLC
+
+By: /S/ AUTHORIZED SIGNATORY By: /s/ STEVEN J. GEISER
+Printed Name:
+Printed Name: Steven J. Geiser
+Title:
+Title: Corporate Vice President and Chief Financial Officer
+Acceptance Date: 12/23/05
+
+Attachment:
+
+Annex I: Supplemental Return Conditions
+
+Annex II: Schedule of Stipulated Loss Values
+ADS Lease Agreement Schedule (standard FMV) 3-02 Page 3 of 3
+Exhibit 10.6
+AMENDMENT TO STUDIO LEASE AGREEMENT
+THIS AMENDMENT TO STUDIO LEASE AGREEMENT (“Amendment”) is made as of August 29, 2000 by and between THE HEARST CORPORATION, a Delaware corporation (“Hearst”), and HEARST-ARGYLE TELEVISION, INC., a Delaware corporation (the “Company”).
+WITNESSET H
+WHEREAS, Hearst and the Company entered into a Studio Lease Agreement dated as of August 29, 1997 (the “Studio Lease Agreement”), attached as Appendix A hereto and made a part hereof, pursuant to which the Company leased to Hearst the Leased Premises (as defined in the Studio Lease Agreement); and
+WHEREAS, Hearst and the Company mutually desire to amend and renew the Studio Lease Agreement as set forth hereinafter;
+NOW, THEREFORE, in consideration of the mutual covenants and agreements contained herein, and other good and valuable consideration, the receipt and sufficiency of which are hereby acknowledged, the parties agree to amend and renew the Studio Lease Agreement as follows:
+1.
+The following is hereby substituted as a new paragraph 2 to the Studio Lease Agreement:
+2.
+Term of Lease.
+The term (“Term”) of this Lease shall be for a period of three (3) years commencing September 1, 2000 and continuing until August 31, 2003, unless sooner terminated as provided in this Lease.
+2.
+The following is hereby substituted as a new paragraph 12 to the Studio Lease Agreement:
+12.
+Right to Assign and Sublease.
+Tenant shall not sublet the Leased Premises or any portion thereof or assign or transfer its rights hereunder to any third party unless Tenant shall first have obtained the written consent of Landlord.
+Any attempted assignment or other transfer in violation of the foregoing shall be void ab initio.
+If Landlord fails to consent to a proposed assignee or transferee identified by Tenant as the buyer of a Radio Station hereunder, then effective upon the consummation of the sale of such Radio Station, this Studio Lease Agreement shall terminate with respect to such Radio Station.
+In the event Landlord should sell or otherwise transfer the Leased Premises, Landlord shall be entitled, in its sole discretion, to either (i) terminate this Studio Lease Agreement, such termination to be effective upon the consummation of the sale of the Leased Premises, or (ii) assign or transfer this Studio Lease Agreement to the purchaser or transferee of the Leased Premises (and in such case Landlord shall have no further duties or obligations hereunder provided that the purchaser or transferee agrees to assume all of the duties and obligations imposed hereunder on Landlord).
+Landlord shall provide Tenant with at least thirty (30) days prior written notice of Landlord’s determination under either (i) or (ii) above.
+3.
+The attached Revised Exhibit B is hereby substituted in place and instead of Exhibit B to Appendix A hereto.
+4.
+Except as expressly set forth herein, all terms and conditions of the Studio Lease Agreement shall continue in full force and effect.
+IN WITNESS WHEREOF, the parties have executed this Amendment as of the date first above written.
+THE HEARST CORPORATION
+By: /s/ Ronald J. Doerfler
+Name: Ronald J. Doerfler
+
+Title: Senior Vice President and
+
+Chief Financial Officer
+HEARST-ARGYLE TELEVISION, INC.
+By: /s/ Harry T. Hawks
+Name: Harry T. Hawks
+
+Title: Executive Vice President and
+
+Chief Financial Officer
