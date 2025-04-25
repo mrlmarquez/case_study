@@ -1,15 +1,12 @@
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.text_splitter import NLTKTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 
 class RulesTextSplitter:
     def __init__(self, chunk_size, chunk_overlap=50):
-        pattern = r"([0-9]+)\. "
+        separators = ["\n\n", "\n"]
         self.text_splitter = RecursiveCharacterTextSplitter(
-            is_separator_regex=True,
-            separators=[pattern],
-            chunk_size=chunk_size,
-            chunk_overlap=chunk_overlap,
-            keep_separator=False,
+            separators=separators, chunk_size=chunk_size, chunk_overlap=chunk_overlap
         )
 
     def split(self, text):

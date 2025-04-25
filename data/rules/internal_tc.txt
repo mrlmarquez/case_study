@@ -1,82 +1,41 @@
 Typical Acceptable Terms and Conditions in European Retail Shop Lease Contracts
+
+
 1. Lease Duration
-
-Lease terms commonly range from 1 to 5 years for standard retail units, and up to 10–15 years for anchor tenants or large spaces.
-
-In some countries (e.g., Belgium, France, Italy), there are minimum terms (often 6–9 years), with break options at fixed intervals (e.g., every 3 years in France).
-
-Renewal options are often included, and in many jurisdictions, tenants have statutory rights to renew unless the landlord can show specific grounds for refusal.
+Lease terms commonly range from 1 to 5 years for standard retail units, and up to 10–15 years for anchor tenants or large spaces. In some countries (e.g., Belgium, France, Italy), there are minimum terms (often 6–9 years), with break options at fixed intervals (e.g., every 3 years in France). Renewal options are often included, and in many jurisdictions, tenants have statutory rights to renew unless the landlord can show specific grounds for refusal.
 
 2. Rent and Rent Review
-
-Rent is typically fixed for the initial term and may be reviewed periodically, often every 3–5 years, based on market rates or inflation indices.
-
-Turnover rent (a percentage of tenant sales) may be included, especially in shopping centres.
-
-Rent-free periods or landlord capital contributions for fit-out works are sometimes negotiated, especially for new or renewing tenants.
+Rent is typically fixed for the initial term and may be reviewed periodically, often every 3–5 years, based on market rates or inflation indices. Turnover rent (a percentage of tenant sales) may be included, especially in shopping centres. Rent-free periods or landlord capital contributions for fit-out works are sometimes negotiated, especially for new or renewing tenants.
 
 3. Security Deposit and Guarantees
-
-Security deposits are standard, usually equivalent to 3–6 months’ rent.
-
-In some countries, bank guarantees or parent company guarantees may be required.
+Security deposits are standard, usually equivalent to 3–6 months’ rent. In some countries, bank guarantees or parent company guarantees may be required.
 
 4. Service Charges and Common Area Costs
-
-Tenants pay a proportionate share of service charges for maintenance, cleaning, and security of common areas.
-
-Service charge caps may be negotiated to limit tenant exposure.
-
-Tenants may also contribute to marketing and promotional costs for the shopping centre.
+Tenants pay a proportionate share of service charges for maintenance, cleaning, and security of common areas.Service charge caps may be negotiated to limit tenant exposure. Tenants may also contribute to marketing and promotional costs for the shopping centre.
 
 5. Maintenance and Repairs
-
-Leases specify whether the tenant is responsible for internal repairs only or for full repairing obligations (“FRI lease”).
-
-Schedules of condition are often used so the tenant is only obliged to maintain the premises in their existing state, not improve them.
+Leases specify whether the tenant is responsible for internal repairs only or for full repairing obligations (“FRI lease”). Schedules of condition are often used so the tenant is only obliged to maintain the premises in their existing state, not improve them.
 
 6. Use and Trading Obligations
-
-The permitted use of the premises is clearly defined.
-
-Tenants are commonly required to trade during the centre’s opening hours, with financial penalties for non-compliance.
-
-Exclusivity clauses (preventing landlords from letting nearby units to direct competitors) are sometimes negotiated but are less common and subject to competition law.
+The permitted use of the premises is clearly defined. Tenants are commonly required to trade during the centre’s opening hours, with financial penalties for non-compliance. Exclusivity clauses (preventing landlords from letting nearby units to direct competitors) are sometimes negotiated but are less common and subject to competition law.
 
 7. Subletting and Assignment
-
-Subletting and assignment of the lease are typically allowed with landlord consent, which cannot be unreasonably withheld in many jurisdictions.
-
-Some leases restrict assignment to group companies or require the new tenant to meet financial criteria.
+Subletting and assignment of the lease are typically allowed with landlord consent, which cannot be unreasonably withheld in many jurisdictions. Some leases restrict assignment to group companies or require the new tenant to meet financial criteria.
 
 8. Insurance
-
-Landlords insure the building; tenants reimburse their share of the premium.
-
-Tenants are usually required to insure their own contents and public liability.
-
-Business interruption insurance is less common but may be required for larger tenants.
+Landlords insure the building; tenants reimburse their share of the premium. Tenants are usually required to insure their own contents and public liability. Business interruption insurance is less common but may be required for larger tenants.
 
 9. Break Clauses and Early Termination
-
-Break clauses (tenant’s right to end the lease early) are often included, usually after a fixed period and subject to notice and compliance with conditions (e.g., payment of rent).
-
-Landlords may only terminate early in specific circumstances, such as redevelopment or tenant default, and often must give significant notice.
+Break clauses (tenant’s right to end the lease early) are often included, usually after a fixed period and subject to notice and compliance with conditions (e.g., payment of rent). Landlords may only terminate early in specific circumstances, such as redevelopment or tenant default, and often must give significant notice.
 
 10. Reinstatement and Fit-Out
-
-Tenants must reinstate the premises to original condition at lease end, subject to fair wear and tear.
-
-Fit-out works require landlord consent, usually documented in a “licence to alter”.
+Tenants must reinstate the premises to original condition at lease end, subject to fair wear and tear. Fit-out works require landlord consent, usually documented in a “licence to alter”.
 
 11. Green Lease Provisions
-
 Increasingly, leases include “green” clauses requiring tenants to cooperate on sustainability initiatives (energy efficiency, recycling, etc.), usually on a best-efforts basis.
 
 12. Force Majeure
-
 Leases may address rent reductions or suspension of obligations in the event of government-mandated closures (e.g., due to COVID-19).
 
 13. Statutory Protections
-
 Many European countries have mandatory lease laws protecting tenants, such as statutory renewal rights, compensation for eviction, and rights of first refusal if the property is sold

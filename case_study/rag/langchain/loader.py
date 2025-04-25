@@ -58,4 +58,4 @@ def _read_contracts_metadata(contract_filename, file="data/contracts_metadata.js
         return None
 
 
-load_contracts()
+load_rules()

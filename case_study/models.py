@@ -47,6 +47,23 @@ class LegalEntities(BaseModel):
     )
 
 
+class RuleStep(BaseModel):
+    rule: str
+    explanation: str
+
+    def __str__(self):
+        return f"""Rule: {self.rule}\n\nExplanation of the rule: {self.explanation}"""
+
+
+class ApplicationStep(BaseModel):
+    related_clauses: List[str]
+    application_explanation: str
+
+    def __str__(self):
+        related_clauses_str = "\n\n".join(self.related_clauses)
+        return f"""Related Clauses: {related_clauses_str}\n\nExplanation of the application: {self.application_explanation}"""
+
+
 class GraphState(TypedDict):
     """
     Graph state is a dictionary that contains information we want to propagate to, and modify in, each graph node.
@@ -58,5 +75,5 @@ class GraphState(TypedDict):
     conclusion: str
     is_conclusion_found: bool
     loop_step: Annotated[int, operator.add]
-    retrieved_rules: List[str]
-    retrieved_applied_clauses: List[str]
+    rule_step: List[RuleStep]
+    application_step: List[ApplicationStep]

@@ -20,6 +20,16 @@ IDENTIFY_ISSUE_PROMPT = (
     "The active clause in the current contract: {ACTIVE_CLAUSE}\n\n \
         The renewal clause in the proposed new contract: {INCOMING_CLAUSE}"
 )
+CONCLUSION_INSTRUCTION = (
+    "You are a seasoned lawyer specializing in Lease Contracts dealings. Using the IRAC methodology, \
+    based on the application of the rule(s) to the issue, what is the most likely conclusion or outcome of the legal issue? \
+    Provide a clear and concise conclusion. Mention elements in the issue as necessary."
+)
+CONCLUSION_PROMPT = "Provide the conclusion given the following inputs:\n \
+        ISSUE: {ISSUE}\n\n \
+        RULE(S): {RULES}\n\n \
+        APPLICATION: {APPLICATION}\n\n \
+    Return a JSON with a key 'conclusion' and put your conclusion in there."
 
 rules_store = VectorStore(doc_type="rules")
 contracts_store = VectorStore(doc_type="contracts")
@@ -50,26 +60,45 @@ def identify_issue(state: GraphState):
 def retrieve_rule(state: GraphState):
     issue = state["issue"]
     retrieved_rules = find_applicable_rules(issue, rules_store)
-    state["retrieved_rules"] = retrieved_rules["relevant_rules"]
+    state["rule_step"] = retrieved_rules
     return state
 
 
 def retrieve_historical_application(state: GraphState):
     issue = state["issue"]
-    relevant_rules = state["retrieved_rules"]
+    relevant_rules = state["rule_step"]
     country = "Germany"
 
-    result = find_application(
-        question=issue,
+    application_step = find_application(
+        issue=issue,
         relevant_rules=relevant_rules,
         country=country,
         vector_store=contracts_store,
     )
+
+    state["application_step"] = application_step
     return state
 
 
 def conclude(state: GraphState):
-    return "conclude"
+    issue = state["issue"]
+    rules_formatted = "\n".join([str(rule) for rule in state["rule_step"]])
+    application_formatted = str(state["application_step"])
+
+    _, llm_json_mode = get_chat()
+    conclusion_prompt_formatted = CONCLUSION_PROMPT.format(
+        ISSUE=issue, RULES=rules_formatted, APPLICATION=application_formatted
+    )
+    result = llm_json_mode.invoke(
+        [
+            SystemMessage(content=CONCLUSION_INSTRUCTION),
+            HumanMessage(content=conclusion_prompt_formatted),
+        ]
+    )
+    conclusion = json.loads(result.content)
+    print(conclusion)
+    state["conclusion"] = conclusion["conclusion"]
+    return state
 
 
 # EDGE
