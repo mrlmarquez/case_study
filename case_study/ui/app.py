@@ -1,14 +1,10 @@
 import os
-
 import sys
-
-from case_study.rag.langchain.loader import load_contracts, load_rules
 
 os.chdir("/mount/src/case_study/")
 sys.path.append("/mount/src/case_study/")
 
 __import__("pysqlite3")
-import sys
 
 sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
 
@@ -16,6 +12,7 @@ from langchain_core.messages import AIMessage, HumanMessage
 import streamlit as st
 import asyncio
 
+from case_study.rag.langchain.loader import load_contracts, load_rules
 from case_study.ui.astream_events_handler import (
     invoke_our_graph,
 )  # Utility function to handle events from astream_events from graph
