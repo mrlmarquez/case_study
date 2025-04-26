@@ -40,7 +40,7 @@ async def identify_issue(state: GraphState):
     active_clause = state["active_clause"]
     proposed_clause = state["incoming_clause"]
 
-    _, llm_json_mode = get_chat()
+    llm_json_mode = get_chat()
     identify_issue_prompt_formatted = IDENTIFY_ISSUE_PROMPT.format(
         ACTIVE_CLAUSE=active_clause, INCOMING_CLAUSE=proposed_clause
     )
@@ -85,7 +85,7 @@ async def conclude(state: GraphState):
     rules_formatted = "\n".join([str(rule) for rule in state["rule_step"]])
     application_formatted = str(state["application_step"])
 
-    _, llm_json_mode = get_chat()
+    llm_json_mode = get_chat()
     conclusion_prompt_formatted = CONCLUSION_PROMPT.format(
         ISSUE=issue, RULES=rules_formatted, APPLICATION=application_formatted
     )

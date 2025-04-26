@@ -1,6 +1,6 @@
 import json
 from typing import List
-from case_study.llms.ollama import get_chat
+from case_study.llms.openai import get_chat
 from case_study.models import ApplicationStep, RuleStep
 from case_study.rag.langchain.vector_store import VectorStore
 from langchain_core.messages import HumanMessage
@@ -30,7 +30,7 @@ RETRIEVAL_PROMPT = """In the context of legal analysis of lease contract renewal
 
 
 def find_application(issue, relevant_rules, country, vector_store: VectorStore):
-    _, llm_json_mode = get_chat()
+    llm_json_mode = get_chat()
 
     retrieved_rules_formatted = _format_rules(relevant_rules)
     query_response = llm_json_mode.invoke(

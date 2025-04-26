@@ -23,7 +23,7 @@ def find_applicable_rules(issue, vector_store: VectorStore):
     )
     rules_result = []
     for rule in retrieved_rules:
-        _, llm = get_chat()
+        llm = get_chat()
         # Prepare the context and prompt, and generate an answer with the LLM
         retrieved_rules_formatted = _format_docs([rule])
         rag_prompt_formatted = RAG_PROMPT.format(
@@ -41,4 +41,3 @@ def find_applicable_rules(issue, vector_store: VectorStore):
 
 def _format_docs(docs):
     return "\n\n".join(doc.page_content for doc in docs)
-
