@@ -2,7 +2,7 @@ from langchain_core.messages import AIMessage, HumanMessage
 import streamlit as st
 import asyncio
 
-from astream_events_handler import (
+from case_study.ui.astream_events_handler import (
     invoke_our_graph,
 )  # Utility function to handle events from astream_events from graph
 
