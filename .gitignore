@@ -179,3 +179,5 @@ data/**/*.bin
 data/**/*.sqlite3
 data/**/*.pickle
 data/**/*.txt
+
+.streamlit/

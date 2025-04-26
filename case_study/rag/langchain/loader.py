@@ -4,9 +4,8 @@ from tqdm import tqdm
 
 from case_study.rag.langchain.rules_splitter import RulesTextSplitter
 from case_study.rag.langchain.splitter import TextSplitter
-from case_study.rag.langchain.vector_store import VectorStore
+from case_study.rag.langchain.vector_store import GCPChroma, VectorStore
 from case_study.utils.files import load_text
-from langchain_core.documents import Document
 
 
 DOCS_DIR = "data/rules"
@@ -31,7 +30,7 @@ def load_rules():
 
 
 def load_contracts():
-    vector_store = VectorStore(doc_type="contracts")
+    vector_store = VectorStore(doc_type="contracts")  # GCPChroma(doc_type="contracts")
     text_splitter = TextSplitter(chunk_size=512, chunk_overlap=50)
 
     for filename in tqdm(os.listdir("data/contracts")):
@@ -56,6 +55,3 @@ def _read_contracts_metadata(contract_filename, file="data/contracts_metadata.js
                 return item
 
         return None
-
-
-load_rules()
