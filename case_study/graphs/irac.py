@@ -1,7 +1,7 @@
 import json
 from langgraph.graph import StateGraph, END
 
-from case_study.llms.ollama import get_chat
+from case_study.llms.openai import get_chat
 from case_study.models import GraphState
 
 from langchain_core.messages import HumanMessage, SystemMessage

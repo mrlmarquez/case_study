@@ -10,21 +10,28 @@ VECTOR_STORE_FILEPATH = "data/{doc}_chroma_langchain_db"
 class VectorStore:
     def __init__(self, doc_type="contracts"):
         self.filepath = VECTOR_STORE_FILEPATH.format(doc=doc_type)
-        self.collection = doc_type
+        client = chromadb.PersistentClient(path=self.filepath)
+        self.collection_name = doc_type
+
+        self.collection = client.get_or_create_collection(doc_type)
         self.store = Chroma(
             collection_name=doc_type,
             embedding_function=OpenAIEmbeddings(),
-            persist_directory=self.filepath,  # Where to save data locally, remove if not necessary
+            client=client,  # Where to save data locally, remove if not necessary
         )
+
         self.retriever = self.store.as_retriever(
             search_type="mmr", search_kwargs={"k": 1, "fetch_k": 5}
         )
-        print(f"{doc_type} collection initialized")
+        print(f"{doc_type} collection initialized with size {self.collection.count()}")
 
     def add(self, doc_splits):
         # uuids = [str(uuid4()) for _ in range(len(doc_splits))]
+        print(f"Current collection count: {self.collection.count()}")
         self.store.add_documents(doc_splits)
-        print(f"{len(doc_splits)} added to {self.collection} collection initialized")
+        print(
+            f"{len(doc_splits)} added to {self.collection_name} collection (size:{self.collection.count()})"
+        )
 
 
 class GCPChroma:

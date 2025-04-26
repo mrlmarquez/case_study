@@ -1,0 +1,6 @@
+from langchain_openai import ChatOpenAI
+
+
+def get_client():
+    client = ChatOpenAI(model="o4-mini", temperature=0.0)
+    return client
