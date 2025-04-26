@@ -5,7 +5,7 @@ from case_study.llms.ollama import get_chat
 from case_study.models import GraphState
 
 from langchain_core.messages import HumanMessage, SystemMessage
-
+from langchain_core.callbacks import adispatch_custom_event
 from case_study.rag.langchain.contracts_rag import find_application
 from case_study.rag.langchain.rules_rag import find_applicable_rules
 from case_study.rag.langchain.vector_store import VectorStore
@@ -36,7 +36,7 @@ contracts_store = VectorStore(doc_type="contracts")
 
 
 # NODES
-def identify_issue(state: GraphState):
+async def identify_issue(state: GraphState):
     active_clause = state["active_clause"]
     proposed_clause = state["incoming_clause"]
 
@@ -57,17 +57,17 @@ def identify_issue(state: GraphState):
     return state
 
 
-def retrieve_rule(state: GraphState):
+async def retrieve_rule(state: GraphState):
     issue = state["issue"]
     retrieved_rules = find_applicable_rules(issue, rules_store)
     state["rule_step"] = retrieved_rules
     return state
 
 
-def retrieve_historical_application(state: GraphState):
+async def apply(state: GraphState):
     issue = state["issue"]
     relevant_rules = state["rule_step"]
-    country = "Germany"
+    country = state["country"]
 
     application_step = find_application(
         issue=issue,
@@ -80,7 +80,7 @@ def retrieve_historical_application(state: GraphState):
     return state
 
 
-def conclude(state: GraphState):
+async def conclude(state: GraphState):
     issue = state["issue"]
     rules_formatted = "\n".join([str(rule) for rule in state["rule_step"]])
     application_formatted = str(state["application_step"])
@@ -102,8 +102,11 @@ def conclude(state: GraphState):
 
 
 # EDGE
-def did_we_arrive_to_a_conclusion(state: GraphState):
-    return END
+async def did_we_arrive_to_a_conclusion(state: GraphState):
+    await adispatch_custom_event(
+        "on_complete_graph", {"input": state, "len": len(state)}
+    )
+    return "yes"
 
 
 class IRACGraph:
@@ -111,14 +114,12 @@ class IRACGraph:
         self.workflow = StateGraph(GraphState)
         self.workflow.add_node("identify_issue", identify_issue)
         self.workflow.add_node("retrieve_rule", retrieve_rule)
-        self.workflow.add_node(
-            "retrieve_historical_application", retrieve_historical_application
-        )
+        self.workflow.add_node("apply", apply)
         self.workflow.add_node("conclude", conclude)
 
         self.workflow.add_edge("identify_issue", "retrieve_rule")
-        self.workflow.add_edge("retrieve_rule", "retrieve_historical_application")
-        self.workflow.add_edge("retrieve_historical_application", "conclude")
+        self.workflow.add_edge("retrieve_rule", "apply")
+        self.workflow.add_edge("apply", "conclude")
         self.workflow.add_conditional_edges(
             "conclude",
             did_we_arrive_to_a_conclusion,

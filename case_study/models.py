@@ -71,6 +71,7 @@ class GraphState(TypedDict):
 
     active_clause: str
     incoming_clause: str
+    country: str
     issue: str  # User question
     conclusion: str
     is_conclusion_found: bool

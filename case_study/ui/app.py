@@ -21,7 +21,7 @@ if "graph_resume" not in st.session_state:
 if "messages" not in st.session_state:
     # Set an initial message from the "Ai" to prompt the user
     st.session_state["messages"] = [
-        AIMessage(content="Please provide me with a word smaller then 5 letters?")
+        AIMessage(content="Please provide me the clauses")
     ]
 
 prompt = st.chat_input()
