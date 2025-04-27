@@ -19,11 +19,18 @@ from case_study.ui.astream_events_handler import (
     invoke_our_graph,
 )  # Utility function to handle events from astream_events from graph
 
-print("loading rules")
-load_rules()
-print("loading contracts")
-load_contracts()
 
+@st.experimental_singleton
+def init_db():
+    print("loading rules")
+    load_rules()
+    print("loading contracts")
+    load_contracts()
+    return True
+
+
+initialized = init_db()
+print(f"INITIALIZED? {initialized}")
 st.title("StreamLit 🤝 LangGraph")
 
 # Session state management for expander and graph resume after interrupt
