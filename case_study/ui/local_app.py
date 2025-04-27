@@ -12,7 +12,8 @@ from case_study.ui.astream_events_handler import (
 # print("loading contracts")
 # load_contracts()
 
-st.title("StreamLit 🤝 LangGraph")
+st.title("LexiBlox Agent")
+st.subheader("Lease Contract Reviewer")
 
 # Session state management for expander and graph resume after interrupt
 if "expander_open" not in st.session_state:
@@ -26,19 +27,35 @@ if "graph_resume" not in st.session_state:
 # Initialize chat messages in session state
 if "messages" not in st.session_state:
     # Set an initial message from the "Ai" to prompt the user
-    st.session_state["messages"] = [AIMessage(content="Please provide me the clauses")]
+    st.session_state["messages"] = [
+        AIMessage(content="Copy & paste the above example JSON in the chat")
+    ]
 
 prompt = st.chat_input()
 
 if prompt is not None:
     st.session_state.expander_open = False  # Close expander when user enters a prompt
 
-with st.expander(label="Dynamic Interrupts", expanded=st.session_state.expander_open):
+with st.expander(
+    label="Example Input Clauses", expanded=st.session_state.expander_open
+):
     """
-    This example will highlight the usage of `NodeInterrupt` and `adispatch_custom_event` 
-    to achieve a custom Human in the Loop experience, 
-    that will dynamically ask the user for a new response based on the user's input.
+    ```json
+    {
+        "active_clause": "DURATION OF TERM: A. The Primary Term and duration of the Lease shall be for a period of 5 years, commencing the 1st day of April, 2006 (the 'Commencement Date'). B.Provided the TENANT has not defaulted under the terms of this Lease, the TENANT shall have the right, privilege and option of extending this Lease for an additional period of 5 years (hereinafter referred to as Secondary Term) commencing upon the termination date of the Primary Term set forth above.The TENANT shall exercise its option for the Secondary Term ofthis Lease by delivering written notice to the LANDLORD at least 180 days prior to, and no more than 210 days prior to, the expiration of the Primary Term by Certified Mail.",
+        "incoming_clause": "DURATION OF TERM: A.The Primary Term and duration of the Lease shall be for a period of 15 years, commencing the 1st day of April, 2011(the 'Commencement Date'). B.Provided the TENANT has not defaulted under the terms of this Lease, the TENANT shall have the right, privilegeand option of extending this Lease for an additional period of 15 years (hereinafter referred to as Secondary Term) commencing upon the termination date of the Primary Term set forth above.The TENANT shall exercise its option for the Secondary Term of this Lease by delivering written notice to the LANDLORD at least 180 days prior to, and no more than 210 days prior to, the expiration of the Primary Term by Certified Mail.", 
+        "country": "Germany",    
+        "max_retries": 3
+    }
     """
+# st.code(
+#     """{
+#         "active_clause": "DURATION OF TERM: \nA. The Primary Term and duration of the Lease shall be for a period of 5 years, commencing the 1st day of April, 2006 (the 'Commencement Date'). \nB.Provided the TENANT has not defaulted under the terms of this Lease, the TENANT shall have the right, privilege and option of extending this Lease for an additional period of 5 years (hereinafter referred to as Secondary Term) commencing upon the termination date of the Primary Term set forth above.The TENANT shall exercise its option for the Secondary Term ofthis Lease by delivering written notice to the LANDLORD at least 180 days prior to, and no more than 210 days prior to, the expiration of the Primary Term by Certified Mail.",
+#         "incoming_clause": "DURATION OF TERM: \nA.The Primary Term and duration of the Lease shall be for a period of 15 years, commencing the 1st day of April, 2011(the 'Commencement Date'). \nB.Provided the TENANT has not defaulted under the terms of this Lease, the TENANT shall have the right, privilegeand option of extending this Lease for an additional period of 15 years (hereinafter referred to as Secondary Term) commencing upon the termination date of the Primary Term set forth above.The TENANT shall exercise its option for the Secondary Term of this Lease by delivering written notice to the LANDLORD at least 180 days prior to, and no more than 210 days prior to, the expiration of the Primary Term by Certified Mail.",
+#         "country": "Germany",
+#         "max_retries": 3,
+#     }"""
+# )
 
 # Loop through all messages in the session state and render them as a chat on every st.refresh mech
 for msg in st.session_state.messages:
