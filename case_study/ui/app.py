@@ -20,7 +20,7 @@ from case_study.ui.astream_events_handler import (
 )  # Utility function to handle events from astream_events from graph
 
 
-@st.experimental_singleton
+@st.cache_resource
 def init_db():
     print("loading rules")
     load_rules()
