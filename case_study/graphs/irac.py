@@ -54,6 +54,11 @@ async def identify_issue(state: GraphState):
     print(content)
     result = content["basis"]
     state["issue"] = result
+
+    await adispatch_custom_event(
+        "on_issue_identified", {"input": state, "len": len(state)}
+    )
+
     return state
 
 
@@ -61,6 +66,11 @@ async def retrieve_rule(state: GraphState):
     issue = state["issue"]
     retrieved_rules = find_applicable_rules(issue, rules_store)
     state["rule_step"] = retrieved_rules
+
+    await adispatch_custom_event(
+        "on_rules_retrieved", {"input": state, "len": len(state)}
+    )
+
     return state
 
 
@@ -77,6 +87,8 @@ async def apply(state: GraphState):
     )
 
     state["application_step"] = application_step
+
+    await adispatch_custom_event("on_application", {"input": state, "len": len(state)})
     return state
 
 
@@ -98,6 +110,8 @@ async def conclude(state: GraphState):
     conclusion = json.loads(result.content)
     print(conclusion)
     state["conclusion"] = conclusion["conclusion"]
+
+    await adispatch_custom_event("on_conclusion", {"input": state, "len": len(state)})
     return state
 
 

@@ -3,6 +3,7 @@ import streamlit as st
 
 # from graph import graph
 from case_study.graphs.irac import IRACGraph
+from case_study.ui.text_formatter import rules_to_list_section, to_simple_markdown
 
 # Configuration for thread processing with a "specific" thread ID
 # this is key for dynamic interrupts
@@ -24,6 +25,7 @@ async def invoke_our_graph(st_messages, st_placeholder, st_state):
         st_state (dict): State information for controlling graph resume behavior.
     """
     print("============================")
+    print("invoke_our_graph start")
     container = st_placeholder
     st_input = json.loads(st_messages)
 
@@ -40,37 +42,49 @@ async def invoke_our_graph(st_messages, st_placeholder, st_state):
     async for event in graph.astream_events(st_input, thread_config, version="v2"):
         name = event["name"]
 
-        # if name == "retrieve_rule":
+        # if name == "on_issue_identified":
         #     with container:
-        #         data = event["data"]
-        #     # Return success message with processed data
+        #         state = event["data"]["input"]
+
         #     return {
         #         "op": "on_new_graph_msg",
-        #         "msg": f"The issue identified is {event['data']['input']['issue']}",
+        #         "msg": to_simple_markdown("Issue", state["issue"]),
         #     }
 
-        # if name == "apply":
+        # if name == "on_rules_retrieved":
         #     with container:
-        #         data = event["data"]
         #         state = event["data"]["input"]
-        #         rules = "\n---\n".join(str(rule) for rule in state["rule_step"])
 
-        #     # Return success message with processed data
         #     return {
         #         "op": "on_new_graph_msg",
-        #         "msg": f"Relevant rule(s) identified are {rules}",
+        #         "msg": rules_to_list_section(
+        #             "Applicable Internal Rules", state["rule_step"]
+        #         ),
         #     }
 
-        # if name == "conclude":
+        # if name == "on_application":
         #     with container:
-        #         data = event["data"]
         #         state = event["data"]["input"]
-        #         application_formatted = str(state["application_step"])
 
-        #     # Return success message with processed data
         #     return {
         #         "op": "on_new_graph_msg",
-        #         "msg": f"Application analysis: {application_formatted}",
+        #         "msg": to_simple_markdown(
+        #             "Applying the Rule(s)",
+        #             state["application_step"]["application_explanation"],
+        #         ),
+        #     }
+
+        # if name == "on_conclusion":
+        #     with container:
+        #         st.balloons()
+        #         state = event["data"]["input"]
+
+        #     return {
+        #         "op": "on_new_graph_msg",
+        #         "msg": to_simple_markdown(
+        #             "Conclusion",
+        #             state["application_step"]["conclusion"],
+        #         ),
         #     }
 
         # the graph issued an interrupt that the user needs to update/handle
@@ -84,10 +98,23 @@ async def invoke_our_graph(st_messages, st_placeholder, st_state):
             with container:
                 st.balloons()
                 state = event["data"]["input"]
+                issue = to_simple_markdown("Issue", state["issue"])
+                rules = rules_to_list_section(
+                    "Applicable Internal Rules", state["rule_step"]
+                )
+                application = to_simple_markdown(
+                    "Applying the Rule(s)",
+                    state["application_step"].application_explanation,
+                )
+                conclusion = to_simple_markdown(
+                    "Conclusion",
+                    state["conclusion"],
+                )
+                output = f"{issue}\n\n {rules}\n\n {application} \n\n {conclusion}"
             # Return success message with processed data
             return {
                 "op": "on_new_graph_msg",
-                "msg": f"{state}",
+                "msg": f"{output} \n:fairy:",
             }
 
     # Retrieve the current state of the graph to check for any pending tasks or interruptions

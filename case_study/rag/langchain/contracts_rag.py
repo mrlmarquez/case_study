@@ -21,10 +21,7 @@ Return the output in JSON format with a key 'explanation' which contains your ap
 """
 
 RETRIEVAL_PROMPT = """In the context of legal analysis of lease contract renewals, given the issue: {ISSUE} and relevant rules: {RULES}\
-    You need to search a Contracts Database. So, generate the best search phrase by doing the following steps:
-    1. Extract the key information from the given issue
-    2. Extract the relevant key words from the rules
-    3. Put both together and create a query phrase 
+    Provide a search question aimed at finding the baseline value for the issue given the rules. 
     The response should be in JSON format with a key 'search_phrase' 
 """
 

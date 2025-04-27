@@ -61,7 +61,7 @@ if prompt:
         )  # Placeholder for dynamically updating agents message
         shared_state = {"graph_resume": st.session_state.graph_resume}
         response = asyncio.run(invoke_our_graph(prompt, placeholder, shared_state))
-
+        print("assistant start")
         # Handle the response from the graph
         if type(response) is dict:  # error handling
             operation = response[
@@ -78,7 +78,7 @@ if prompt:
                 st.session_state.messages.append(AIMessage(response["msg"]))
                 st.write(response["msg"])  # Display response from graph
                 # graph doesn't need to resume  and can be reset, we assume from graph the response is valid
-                st.session_state.graph_resume = False
+                st.session_state.graph_resume = True
             else:
                 st.error("Received: " + response)  # Handle unexpected operations
         else:
