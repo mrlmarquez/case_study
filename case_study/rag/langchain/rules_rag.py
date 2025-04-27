@@ -23,7 +23,7 @@ def find_applicable_rules(issue, vector_store: VectorStore):
     )
     rules_result = []
     for rule in retrieved_rules:
-        llm = get_chat()
+        llm = get_chat().with_structured_output(RuleStep)
         # Prepare the context and prompt, and generate an answer with the LLM
         retrieved_rules_formatted = _format_docs([rule])
         rag_prompt_formatted = RAG_PROMPT.format(
@@ -31,10 +31,8 @@ def find_applicable_rules(issue, vector_store: VectorStore):
         )
 
         response = llm.invoke([HumanMessage(content=rag_prompt_formatted)])
-        response_json = json.loads(response.content)
-        rule_step = RuleStep(
-            rule=rule.page_content, explanation=response_json["explanation"]
-        )
+        # response_json = json.loads(response.content)
+        rule_step = RuleStep(rule=rule.page_content, explanation=response.explanation)
         rules_result.append(rule_step)
     return rules_result
 

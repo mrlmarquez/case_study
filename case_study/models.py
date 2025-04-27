@@ -47,6 +47,11 @@ class LegalEntities(BaseModel):
     )
 
 
+class IssueStep(BaseModel):
+    issue: str
+    basis: str
+
+
 class RuleStep(BaseModel):
     rule: str
     explanation: str
@@ -72,7 +77,7 @@ class GraphState(TypedDict):
     active_clause: str
     incoming_clause: str
     country: str
-    issue: str  # User question
+    issue: str  # IssueStep  # User question
     conclusion: str
     is_conclusion_found: bool
     loop_step: Annotated[int, operator.add]
