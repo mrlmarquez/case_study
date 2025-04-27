@@ -13,7 +13,7 @@ from case_study.ui.astream_events_handler import (
 # load_contracts()
 
 st.title("LexiBlox Agent")
-st.subheader("Lease Contract Reviewer")
+st.subheader("Review lease contracts with AI")
 
 # Session state management for expander and graph resume after interrupt
 if "expander_open" not in st.session_state:
