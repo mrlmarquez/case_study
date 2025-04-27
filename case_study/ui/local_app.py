@@ -78,7 +78,7 @@ if prompt:
                 st.session_state.messages.append(AIMessage(response["msg"]))
                 st.write(response["msg"])  # Display response from graph
                 # graph doesn't need to resume  and can be reset, we assume from graph the response is valid
-                st.session_state.graph_resume = True
+                st.session_state.graph_resume = False
             else:
                 st.error("Received: " + response)  # Handle unexpected operations
         else:
